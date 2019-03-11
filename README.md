@@ -1,5 +1,5 @@
 # space
-Game made in MAC0211 in colaboration with Mathias Van Sluys Menck, and Rodrigo Zanette Magalhães
+Game made in MAC0211 in collaboration with Mathias Van Sluys Menck, and Rodrigo Zanette Magalhães
 
 ## Installation
 Just download the souce code and run
