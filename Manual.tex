@@ -1,0 +1,163 @@
+%        File: Manual.tex
+%     Created: Qui Jun 09 06:00  2016 B
+% Last Change: Qui Jun 09 06:00  2016 B
+%
+\documentclass[a4paper]{book}
+\usepackage[brazilian]{babel}
+\title {Space}
+\author{
+    Mathias Van Sluys Menck 
+    \texttt{4343470}
+    \and
+    Gabriel Kuribara Lasso 
+    \texttt{9298016}
+    \and
+    Rodrigo Zanette de Magalhães 
+    \texttt{9298090}
+}
+\date { }
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter {Comecando}
+
+\section {Instalacao}
+Para instalar, va ate o diretorio em que o jogo se encontra e rode o comando
+
+make
+
+\section {Abrindo o jogo}
+
+No diretorio em que o jogo foi instalado, abra o executavel space pelo terminal usando o comando 
+
+./space
+
+Entao escolha a nave de cada jogador e a fase digitando o numero correspondente
+
+\section {Controles}
+Para controlar a nave do jogador 1, use as teclas das setas, e para o jogador 2, use WASD.
+\\\\Comandos:
+\\Cima/W: Acelera a nave
+\\Esquerda/A: Gira a nave no sentido anti-horario
+\\Direita/D: Gira a nave no sentido horario
+\\Baixo/S: Atira
+
+\chapter {Elementos do jogo}
+
+\section {Naves}
+Todas as naves possuem atributos de massa, pontos de vida, velocidade de atiramento, de rotacao, de movimento e raio de colisao
+
+\subsection {Hyperion}
+Uma fortaleza espacial de grande porte, resiste aos ataques como apenas os muros mais densos o fazem.
+\\Massa: 3000
+\\Vida: 5
+\\Velocidade de tiros: 3 tiros por segundo
+\\Velocidade de rotacao: 0.42 voltas por segundo
+\\Velocidade de movimento: 0.01
+\\Raio de colisao: 50 pixels
+
+\subsection {Aegis}
+Uma nave basica e para aqueles que não buscam excelencia, mas equilibrio.
+\\Massa: 1500
+\\Vida: 2
+\\Velocidade de tiros: 4 tiros por segundo
+\\Velocidade de rotacao: 0.54 voltas por segundo
+\\Velocidade de movimento: 0.12
+\\Raio de colisao: 29 pixels
+
+\subsection {Tartarus}
+Uma nave agil e potente, feita com precisão de controle em mente.
+\\Massa: 850
+\\Vida: 2
+\\Velocidade de tiros: 4.62 tiros por segundo
+\\Velocidade de rotacao: 1.87 voltas por segundo
+\\Velocidade de movimento: 0.1
+\\Raio de colisao: 25 pixels
+
+\subsection {Argo}
+Inspirada em uma famosa fortaleza, esta nave consegue tanto receber quanto devolver golpes.
+\\Massa: 2000
+\\Vida: 3
+\\Velocidade de tiros: 4 tiros por segundo
+\\Velocidade de rotacao: 0.37 voltas por segundo
+\\Velocidade de movimento: 0.07
+\\Raio de colisao: 37 pixels
+
+\subsection {Melpomene}
+Nave perigosa tanto para o inimigo quanto o piloto, ela é desenhada para ataques relampagos e missoes suicidas.
+\\Massa: 700
+\\Vida: 1
+\\Velocidade de tiros: 7.5 tiros por segundo
+\\Velocidade de rotacao: 0.94 voltas por segundo
+\\Velocidade de movimento: 0.13
+\\Raio de colisao: 17 pixels
+
+\section {Fases}
+
+\subsection {Bidres}
+Uma fase rosa com um planeta feito de gelatina.
+
+\begin {quote}
+    Yummy!!
+\end {quote}
+
+\subsection {Quater}
+Tipo um buraco negro, so que ao contrario. Ele vai te jogar para longe.
+
+\subsection {Octans}
+Um planeta grande e azul;
+
+\subsection {Hexadecyon}
+Um planeta que, embora pequeno, e' muito pesado.
+
+\chapter {Customizando}
+Tambem e possivel adicionar novas naves e fases, alem de modificar as que ja existem. Para isso, basta seguir os passos a seguir:
+
+\section {Adicionando naves}
+No diretorio resources/naves/ ha uma pasta para cada nave. Para adicionar uma nave nova, basta criar uma pasta com os arquivos corretos.
+\\Os arquivos necessarios para uma nave sao:
+
+- 16 imagens no formato .xpm nomeadas de 00.xpm a 15.xmp, cada uma para um angulo da nave, sendo a primeira com ela virada para cima e as demais indo no sentido horario.
+
+- Um arquivo chamado proprieties contendo seis numeros:
+
+A massa da nave
+
+O tempo entre os tiros da nave (em frames);
+
+O tempo entre as rotacoes (em frames, cada rotacao e de 22,5º)
+
+A vida da nave;
+
+O diametro usado para calcular as colisoes (em pixels);
+
+A velocidade da nave (recomenda-se um valor pequeno)
+
+\section {Adicionando fases}
+De forma semelhante, no diretorio resources/fases/ ha uma pasta para cada fase. Para adicionar uma fase nova, basta criar uma pasta com os arquivos corretos.
+\\Os arquivos necessarios para uma fase sao:
+
+- Uma imagem bg.xpm que sera a imagem de fundo
+
+- Uma imagem planeta.xpm que sera a imagem do planeta
+
+- Um arquivo chamado newgame contendo as informacoes da fase organizados da seguinte forma:
+\\D M
+\\X1 Y1 Vx1 Vy1
+\\X2 Y2 Vx2 Vy2
+\\W H
+\\
+\\Em que:
+\\D e o diametro do planeta
+\\M e a massa do planeta
+\\(X1, Y1) sao as coordenadas iniciais do jogador 1
+\\(Vx1, Vy1) e a velocidade inicial do jogador 1
+\\(X2, Y2) sao as coordenadas iniciais do jogador 2
+\\(Vx2, Vy2) e a velocidade inicial do jogador 2
+\\W e a largura da janela em pixels
+\\H e a altura da janela em pixels
+
+\end{document}
+
